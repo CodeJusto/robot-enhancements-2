@@ -13,9 +13,6 @@ describe Robot do
       allow(@robot).to receive(:health).and_return(80)
       expect(@box_of_bolts).to receive(:feed).and_call_original
       @robot.pick_up(@box_of_bolts)
-      # Reset stubbed method so that we can test what the robot's actual health is.
-      allow(@robot).to receive(:health).and_call_original
-      expect(@robot.health).to eq(100)
     end
 
     it "should not auto feed box of bolts if above 80hp" do
