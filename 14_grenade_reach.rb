@@ -28,6 +28,8 @@ describe Robot do
 
         it "should dispense the weapon (can only use once)" do
           @robot.attack(@robot2)
+          # Reset the stub so that we can test for the actual current value.
+          allow(@robot).to receive(:equipped_weapon).and_call_original
           expect(@robot.equipped_weapon).to be_nil
         end
       end
