@@ -30,7 +30,6 @@ describe Robot do
       end
 
       it "is unable to successfully wound the enemy" do
-        # binding.pry
         expect(@robot2).not_to receive(:wound)
         @robot.attack(@robot2)
       end
